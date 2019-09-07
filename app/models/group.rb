@@ -1,4 +1,4 @@
 class Group < ApplicationRecord
-  has_many :massages
+  has_many :messages
   has_many :users, through: :users_groups
 end
