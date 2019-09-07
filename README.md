@@ -10,7 +10,7 @@
 
 ### Association
 - has_many :massages
-- has_many :group, through: :users_groups
+- has_many :groups, through: :users_groups
 
 ## groupsテーブル
 
