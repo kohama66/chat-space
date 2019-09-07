@@ -9,8 +9,9 @@
 |password|string|null: false|
 
 ### Association
-- has_many :massages
+- has_many :messages
 - has_many :groups, through: :users_groups
+- has_many ::users_groups
 
 ## groupsテーブル
 
@@ -19,10 +20,10 @@
 |name|string|null: false|
 
 ### Association
-- has_many :massages
+- has_many :messages
 - has_many :users, through: :users_groups
-
-## massagesテーブル
+- has_many ::users_groups
+## messagesテーブル
 
 |Column|Type|Option|
 |------|----|------|
