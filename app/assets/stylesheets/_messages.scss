@@ -1,0 +1,104 @@
+.flash-box {
+  background-color: $blueColor;
+  color: $whiteColor;
+  text-align: center;
+}
+.main {
+  float: right;
+  background-color: #fafafa;
+  width: calc(100% - 300px);
+  height: 100vh;
+  position: relative;
+  &__top{
+    background-color: #ffffff;
+    border-bottom: solid thin #eeeeee;
+    &--edit{
+      padding: 0 20px;
+      height: 40px;
+      line-height: 40px;
+      margin: 28px 40px;
+      color: $blueColor;
+      float: right;
+      border: solid thin $blueColor;
+    }
+    &--title{
+      padding: 35px 0 15px 40px; 
+      font-size: 20px;
+      color: #333333;
+    }
+    &--member {
+      padding-left: 40px;
+      color: $grayColor;
+      font-size: 12px;
+    }
+  }
+  &__contents{
+    @include contents();
+  }
+  &__form{
+    position: absolute;
+    bottom: 0;
+    background-color: $grayColor;
+    height: 100px;
+    width: 100%;
+    .input{
+      margin: 25px 15px 0 40px;
+      height: 50px;
+      width: calc(100% - 200px);
+    }
+    input::placeholder{
+      padding-left: 10px;
+      color: $navyColor;
+      font-size: 16px;
+    }
+    .submit-btn{
+      background-color: $blueColor;
+      color: $whiteColor;
+      height: 50px;
+      width: calc(100% - (100% - 200px) - 95px);
+    }
+    #upload{
+      display: none;
+    }
+    .image-icon{
+      position: absolute;
+      top: 42px;
+      bottom: 0;
+      right: 0;
+      left: calc(100% - 17.16px - 165px);
+    }
+  }
+}
+.side-header {
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100vh;
+  font-weight: bold;
+  &__top{
+    background-color: #253141;
+    height: 98px;
+    margin-bottom: 20px;
+    color: $whiteColor;
+  }
+  &__user {
+    padding-left: 20px;
+    font-size: 16px;
+    color: $whiteColor;
+    line-height: 98px;
+    &--icon1{
+      color: $whiteColor;
+      float: right;
+      line-height: 98px;
+      padding-right: 20px; 
+    }
+    &--icon2{
+      color: $whiteColor;
+      float: right;
+      line-height: 98px;
+      padding-right: 5px; 
+    }
+  }
+  .group {
+    @include groups();
+  }
+}  

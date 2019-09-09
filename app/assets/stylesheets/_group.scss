@@ -1,0 +1,11 @@
+@mixin groups() {
+  margin: 0 0 40px 20px;
+  color: $whiteColor;
+&__title{
+  font-size: 15px;
+}  
+&__message{
+  margin-top: 5px;
+  font-size: 11px;
+}   
+}
