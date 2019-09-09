@@ -1,0 +1,55 @@
+.flash-box
+  グループを作成しました
+.main
+  .main__top
+    .main__top--edit
+      Edit
+    .main__top--title
+      test-group
+    .main__top--member
+      Member : test-user
+  .main__contents
+    .main__contents--talkr
+      test-user
+    .main__contents--time  
+      2019/09/08(Sun) 15:00:00 
+    .main__contents--message
+      こんにちは
+    .main__contents--talkr
+      test-user
+    .main__contents--time  
+      2019/09/08(Sun) 15:30:00 
+    .main__contents--message
+      さようなら
+  .main__form 
+    %form(action="" method="post" enctype="multipart/form-data")
+      %label(for="upload" class="image-icon")
+        = fa_icon "image"      
+      %input(type="file" id="upload")/
+      %input(class="input" type="text" name="message" placeholder="type a message")/
+      %span<>
+      %input(class="submit-btn" type="submit" name="commit" value="Send")/
+    
+.side-header
+  .side-header__top
+    .side-header__user
+      test-user
+      =link_to "", class: "side-header__user--icon1" do
+        = fa_icon "cog"
+      =link_to "", class: "side-header__user--icon2" do
+        = fa_icon "edit" 
+  .group
+    .group__title
+      test-group
+    .group__message  
+      さようなら
+  .group
+    .group__title
+      sample-group
+    .group__message  
+      hello!
+  .group
+    .group__title
+      example
+    .group__message  
+      まだメッセージはありません 
