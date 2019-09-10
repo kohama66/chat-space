@@ -1,8 +1,6 @@
-.flash-box
-  グループを作成しました
 .main
   .main__top
-    .main__top--edit
+    =link_to "groups/:id/edit", class: "main__top--edit" do
       Edit
     .main__top--title
       test-group
@@ -29,27 +27,4 @@
       %input(class="input" type="text" name="message" placeholder="type a message")/
       %span<>
       %input(class="submit-btn" type="submit" name="commit" value="Send")/
-    
-.side-header
-  .side-header__top
-    .side-header__user
-      test-user
-      =link_to "", class: "side-header__user--icon1" do
-        = fa_icon "cog"
-      =link_to "", class: "side-header__user--icon2" do
-        = fa_icon "edit" 
-  .group
-    .group__title
-      test-group
-    .group__message  
-      さようなら
-  .group
-    .group__title
-      sample-group
-    .group__message  
-      hello!
-  .group
-    .group__title
-      example
-    .group__message  
-      まだメッセージはありません 
+= render "shared/side_header" 

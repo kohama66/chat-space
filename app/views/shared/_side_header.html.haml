@@ -1,0 +1,15 @@
+.side-header
+  .side-header__top
+    .side-header__user
+      =current_user.name
+      =link_to edit_user_path(current_user), class: "side-header__user--icon1" do
+        = fa_icon "cog"
+      =link_to new_group_path, class: "side-header__user--icon2" do
+        = fa_icon "edit" 
+  -current_user.groups.each do |grp|
+    .group
+      .group__title
+        =link_to "#", class: "group__title" do
+          =grp.name
+      .group__message
+        Good Bye  
