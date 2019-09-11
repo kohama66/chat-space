@@ -47,6 +47,9 @@
       font-size: 16px;
     }
     .submit-btn{
+      position: absolute;
+      top: 26px;
+      left: calc(100% - 105px - 40px);
       background-color: $blueColor;
       color: $whiteColor;
       height: 50px;

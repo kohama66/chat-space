@@ -20,11 +20,10 @@
     .main__contents--message
       さようなら
   .main__form 
-    %form(action="" method="post" enctype="multipart/form-data")
+    =form_for [@group, @message] do |form|
+      =form.text_field :body, placeholder: "type a message", class: "input"
       %label(for="upload" class="image-icon")
-        = fa_icon "image"      
-      %input(type="file" id="upload")/
-      %input(class="input" type="text" name="message" placeholder="type a message")/
-      %span<>
-      %input(class="submit-btn" type="submit" name="commit" value="Send")/
+        = fa_icon "image"
+      =form.file_field :image, id: "upload" 
+      =form.submit "Send", class: "submit-btn"
 = render "shared/side_header" 
