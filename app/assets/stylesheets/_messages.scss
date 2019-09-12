@@ -27,6 +27,10 @@
       font-size: 12px;
     }
   }
+  &__display{
+    height: calc(100% - 200px);
+    overflow: scroll;
+  }
   &__contents{
     @include contents();
   }
@@ -97,6 +101,7 @@
     }
   }
   .group {
+    overflow: scroll;
     @include groups();
   }
 }  
