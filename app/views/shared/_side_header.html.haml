@@ -12,4 +12,6 @@
         =link_to "#", class: "group__title" do
           =grp.name
       .group__message
-        Good Bye  
+        -# =@message.find_by(group_id: grp.id)
+        -# =@message[grp.id - 1]["body"]
+        =grp.show_last_message
