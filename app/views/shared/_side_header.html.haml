@@ -9,9 +9,7 @@
   -current_user.groups.each do |grp|
     .group
       .group__title
-        =link_to "#", class: "group__title" do
+        =link_to group_messages_path(grp), class: "group__title" do
           =grp.name
       .group__message
-        -# =@message.find_by(group_id: grp.id)
-        -# =@message[grp.id - 1]["body"]
         =grp.show_last_message
