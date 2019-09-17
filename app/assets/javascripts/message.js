@@ -32,7 +32,7 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $(".main__display").append(html)
-      $("input").val("")
+      $(".new_message")[0].reset();
       $('.main__display').animate({scrollTop: $('.main__display')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
