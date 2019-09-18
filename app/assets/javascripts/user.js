@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
 $(function(){
   
-  let search_list = $("#chat-group-form__field");
+  let search_list = $("#user-search-result");
   function appendmenber(data) {
     let html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${data.name}</p>
@@ -16,9 +16,8 @@ $(function(){
     search_list.append(html);   
   }
   
-    $("#new_group").on("keyup", function(){
-      let input = $(".chat__group_name").val();
-      
+    $(".chat-group-form__search").on("keyup", function(){
+      let input = $("#user-search-field").val();
       $.ajax({
         data: { keyword: input },
         dataType: "json",
@@ -26,13 +25,13 @@ $(function(){
         url: "/users"
       })
       .done(function(jdata){
-        $("#chat-group-form__field").empty();
+        $("#user-search-result").empty();
         if (jdata.length !== 0){
           jdata.forEach(function(jdata){
             appendmenber(jdata);
           });
           if (input.length == 0){
-            $("#chat-group-form__field").empty();
+            $("#user-search-result").empty();
           }
         }
         else {

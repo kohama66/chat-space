@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
     
-    let search_list = $("#chat-group-form__field--right");
+    let search_list = $("#member");
     function addNewMnmber(name, id) {
       let html =  `<div class='chat-group-user'>
                     <input name='group[user_ids][]' type='hidden' value='${id}'>
@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function(){
     
     
     
-    $("#new_group").on("click", ".user-search-add", function(){
+    $("#user-search-result").on("click", ".user-search-add", function(){
       $(this).parent().remove();
       newMemberId = $(this).attr("data-user-id");
       newMemberName = $(this).attr("data-user-name");
@@ -28,12 +28,9 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(jdata){
         addNewMnmber(newMemberName, newMemberId);
-        // jdata.forEach(function(jdata){
-        //   addNewMnmber(newMember);
-        // });
       })
       .fail(function(){
-        console.log("ng");
+        alert("error");
       })
     });
   
