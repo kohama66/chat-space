@@ -21,6 +21,7 @@
     .chat-group-form__field--left
       = f.label "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right#member
+      =render partial: "member", collection: @group
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right

@@ -1,6 +1,6 @@
 .main
   .main__top
-    =link_to "groups/:id/edit", class: "main__top--edit" do
+    =link_to edit_group_path(@group.id), class: "main__top--edit" do
       Edit
     .main__top--title
       test-group

@@ -17,6 +17,9 @@ before_action :set_group
     end
   end  
 
+  def edit
+  end  
+
   private
   def message_params
     params.require(:message).permit(:body, :image).merge(group_id: params[:group_id], user_id: current_user.id)
