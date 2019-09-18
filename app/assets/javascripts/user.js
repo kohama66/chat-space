@@ -25,12 +25,11 @@ $(function(){
         type: "GET",
         url: "/users"
       })
-      .done(function(data){
-        console.log(input.length);
+      .done(function(jdata){
         $("#chat-group-form__field").empty();
-        if (data.length !== 0){
-          data.forEach(function(data){
-            appendmenber(data);
+        if (jdata.length !== 0){
+          jdata.forEach(function(jdata){
+            appendmenber(jdata);
           });
           if (input.length == 0){
             $("#chat-group-form__field").empty();
