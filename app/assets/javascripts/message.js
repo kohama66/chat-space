@@ -10,13 +10,37 @@ $(function(){
                   <div class="main__contents--time">
                     ${message.created_at}
                   </div>
-                  <div class="main__contents--messages">
+                  <div class="main__contents--messages" data-id="${message.id}"} >
                   ${message.body}
                   ${img}
                   </div>
                 </div>`
     return html;                
   } 
+  
+  let reloadMessages = function(){
+    last_message_id = $(".main__contents--messages:last").data("id");
+    
+      $.ajax({
+        url:      "api/messages",
+        type:     "GET",
+        dataType: "json",
+        data:     {id: last_message_id},
+        processData: false,
+        contentType: false
+      })
+      .done(function(datas){
+        
+        insertHTML = ""
+        datas.forEach(function(data){
+          console.log(data.id);
+        });
+      })
+      .fail(function(){
+        console.log("NG");
+      })
+  }
+ 
   $('.new_message').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
@@ -34,6 +58,7 @@ $(function(){
       $(".main__display").append(html)
       $(".new_message")[0].reset();
       $('.main__display').animate({scrollTop: $('.main__display')[0].scrollHeight}, 'fast');
+      reloadMessages();
     })
     .fail(function(){
       alert('error');
@@ -42,5 +67,6 @@ $(function(){
       $('.submit-btn').prop('disabled', false);
     })  
   });
+  setInterval(reloadMessages, 2000);
 });
 });

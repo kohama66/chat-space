@@ -3,6 +3,6 @@
     =message.user.name
   .main__contents--time
     =message.created_at
-  .main__contents--messages
+  .main__contents--messages{"data-id" => "#{message.id}"}
     =message.body
     =image_tag message.image
