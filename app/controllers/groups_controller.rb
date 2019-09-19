@@ -26,8 +26,7 @@ class GroupsController < ApplicationController
   end
   
   def edit
-    # binding.pry
-    @group = Group.users.where()
+    @member = Group.find(params[:id]).users
   end  
 
   private

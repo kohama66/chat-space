@@ -4,6 +4,7 @@ before_action :set_group
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    @member = @group.users
   end
 
   def new
