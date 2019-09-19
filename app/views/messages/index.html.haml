@@ -1,11 +1,13 @@
 .main
   .main__top
-    =link_to "groups/:id/edit", class: "main__top--edit" do
+    =link_to edit_group_path(@group.id), class: "main__top--edit" do
       Edit
     .main__top--title
-      test-group
+      =@group.name
     .main__top--member
-      Member : test-user
+      Member : 
+      -@member.each do |member|
+        =member.name
   .main__display
     =render partial: "message", collection: @messages
   .main__form 

@@ -4,6 +4,7 @@ before_action :set_group
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    @member = @group.users
   end
 
   def new
@@ -15,6 +16,9 @@ before_action :set_group
       format.html { redirect_to group_messages_path(params[:group_id]) }
       format.json
     end
+  end  
+
+  def edit
   end  
 
   private
