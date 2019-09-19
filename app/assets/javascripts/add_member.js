@@ -10,9 +10,6 @@ $(document).on('turbolinks:load', function(){
                   </div>`
       search_list.append(html)
     }
-    
-    
-    
     $("#user-search-result").on("click", ".user-search-add", function(){
       $(this).parent().remove();
       newMemberId = $(this).attr("data-user-id");
@@ -33,7 +30,5 @@ $(document).on('turbolinks:load', function(){
         alert("error");
       })
     });
-  
-  
   });
 });
