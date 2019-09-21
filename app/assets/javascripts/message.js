@@ -29,16 +29,14 @@ $(function(){
           data: { id: last_message_id, }
         })
         .done(function(datas){
-          console.log(last_message_id);
           datas.forEach(function(data){
-            console.log(data);
             insertHTML = buildHTML(data)
             $(".main__display").append(insertHTML)
             $('.main__display').animate({scrollTop: $('.main__display')[0].scrollHeight}, 'fast');
           });
         })
         .fail(function(){
-          console.log("NG");
+          alert('error');
         })
     }    
   }
