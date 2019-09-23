@@ -2,7 +2,7 @@
   .main__contents--talkr
     =message.user.name
   .main__contents--time
-    =message.created_at
+    =message.created_at.strftime('%Y年%m月%d日 %H:%M:%S')
   .main__contents--messages{"data-id" => "#{message.id}"}
     =message.body
     =image_tag message.image
